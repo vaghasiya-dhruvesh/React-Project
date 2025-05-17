@@ -1,2 +1,2 @@
 # React-Project
-React Mini Project
+Learning react through building mini projects
