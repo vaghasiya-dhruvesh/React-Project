@@ -1,6 +1,6 @@
 import React from 'react'
 
-function NewCard({ username }) {
+function NewCard({ username, btnText }) {
     // console.log(props.username)      -- Distructuring 
     console.log(username)
     return (
@@ -17,6 +17,8 @@ function NewCard({ username }) {
                     <span>2025</span>
                 </span>
             </div>
+            {/* Here we mention default value if any one does not pass props btnText value */}
+            <div><button>{btnText || "visit the website"}</button></div>
         </div>
     )
 }
