@@ -1,6 +1,6 @@
 import React from 'react'
 
-function NewCard({ username, btnText }) {
+function NewCard({ username, btnText = "visit" }) { // <- we can also able to add default value here
     // console.log(props.username)      -- Distructuring 
     console.log(username)
     return (
