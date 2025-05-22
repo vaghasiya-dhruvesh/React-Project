@@ -41,7 +41,7 @@ function App() {
 
   return (
     <>
-      <div className='w-full max-w-md mx-auto shadow-md rounded-lg px-4 my-8 text-orange-500 bg-gray-700'>
+      <div className='w-full max-w-md mx-auto shadow-md rounded-lg py-2 px-5 my-8 text-orange-500 bg-gray-700'>
         <h1 className='text-white text-center m-3'>Password Generator</h1>
         <div className='flex shadow rounded-lg overflow-hidden mb-4'>
           <input type="text"
@@ -51,7 +51,7 @@ function App() {
             readOnly
             ref={passwordRef}
           />
-          <button onClick={copyPasswordClipboard} className='outline-none shrink py-0.5 px-3 text-white bg-blue-700'>Copy</button>
+          <button onClick={copyPasswordClipboard} className='outline-none shrink py-0.5 px-3 text-white bg-blue-700 hover:bg-green-400 cursor-pointer'>Copy</button>
         </div>
         <div className='flex text-sm gap-x-2'>
           <div className='flex items-center gap-x-1'>
@@ -64,13 +64,20 @@ function App() {
           <div className='flex items-center gap-x-1'>
             <input type="checkbox" defaultChecked={numberAllowed} id="numerInput"
               onChange={() => {
+                setNumberAllowed((prev) => !prev) // here we can access previous value
+              }} />
+            <label htmlFor="numberInput">Number
+            </label>
+
+            <input type="checkbox" defaultChecked={charAllowed} id="charInput"
+              onChange={() => {
                 setCharAllowed((prev) => !prev) // here we can access previous value
               }} />
             <label htmlFor="characterInput">Characters
             </label>
           </div>
         </div>
-      </div>
+      </div >
     </>
   )
 }
