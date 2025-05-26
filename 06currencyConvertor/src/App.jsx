@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import './App.css'
 import { InputBox } from './components'
-import useCurrency from '.hooks/useCurrency'
+import useCurrency from './hooks/useCurrency'
 
 function App() {
   const [amount, setAmount] = useState(0)
@@ -28,11 +27,11 @@ function App() {
     <div
       className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
       style={{
-        backgroundImage: `url('https://images.pexels.com/photos/730547/pexels-photo-730547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')`,
+        backgroundImage: `url('https://images.pexels.com/photos/3532540/pexels-photo-3532540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')`,
       }}
     >
       <div className="w-full">
-        <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
+        <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm">
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -44,13 +43,9 @@ function App() {
                 label="From"
                 amount={amount}
                 currencyOptions={options}
-                onCurrencyChange={(currency) => {
-                  setAmount(amount)
-                }}
+                onCurrencyChange={(currency) => setAmount(amount)}
                 selectCurrency={from}
-                onAmountChange={(amount) => {
-                  setAmount(amount)
-                }}
+                onAmountChange={(amount) => setAmount(amount)}
               />
             </div>
             <div className="relative w-full h-0.5">
@@ -67,9 +62,7 @@ function App() {
                 label="To"
                 amount={convertedAmount}
                 currencyOptions={options}
-                onCurrencyChange={(currency) => {
-                  setTo(currency)
-                }}
+                onCurrencyChange={(currency) => setTo(currency)}
                 selectCurrency={from}
                 amountDisable
               />
