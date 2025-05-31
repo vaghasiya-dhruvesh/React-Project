@@ -1,6 +1,6 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext } from "react"
 
-export default TodoContext = createContext({
+const TodoContext = createContext({
     todos: [
         {
             id: 1,
@@ -14,6 +14,8 @@ export default TodoContext = createContext({
     deleteTodo: (id) => { },
     toggleCompelete: (id) => { }
 })
+
+export default TodoContext
 
 export const useTodo = () => {
     return useContext(TodoContext)
